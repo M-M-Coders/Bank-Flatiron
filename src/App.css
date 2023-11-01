@@ -1,3 +1,53 @@
+/* App.css */
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+/* Styles for the entire app container */
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Style for the heading */
 h1 {
-  text-align: center;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* Style for the search bar container */
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Style for the search input elements */
+input {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px; /* Adjust the maximum width as needed */
+}
+
+/* Style for the transaction table container */
+.transaction-table-container {
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Style for the table (adjust as needed) */
+table {
+  width: 100%; /* 100% width within the container */
+  border-collapse: collapse;
+  margin-top: 10px;
+  /* Add any other table styles you need */
 }
