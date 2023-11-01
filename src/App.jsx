@@ -1,4 +1,3 @@
-/* App.js */
 import React, { useState, useEffect } from "react";
 import TranscationTable from "./TranscationTable";
 import "./App.css";
@@ -10,10 +9,13 @@ function App() {
   const [searchAmount, setSearchAmount] = useState("");
 
   useEffect(() => {
+    // Specify the API endpoint URL with port 3000
+    const apiEndpoint = "http://localhost:3000/transactions";
+
     // Simulate fetching data from an API
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/transactions");
+        const response = await fetch(apiEndpoint);
         if (response.ok) {
           const data = await response.json();
           setFetchedData(data);
@@ -60,7 +62,6 @@ function App() {
           transactions={fetchedData}
           searchDescription={searchDescription}
           searchCategory={searchCategory}
-          searchAmount={searchAmount}
           onDelete={handleDelete}
         />
       </div>
