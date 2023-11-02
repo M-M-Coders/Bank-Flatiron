@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TranscationTable from "./TranscationTable";
 import "./App.css";
+import Form from "./Form";
 
 function App() {
   const [fetchedData, setFetchedData] = useState([]);
@@ -28,10 +29,11 @@ function App() {
     fetchData();
   }, []);
 
-  const handleDelete = (id) => {
-    // Simulate deleting a transaction
-    const updatedData = fetchedData.filter((item) => item.id !== id);
-    setFetchedData(updatedData);
+  const handleDelete = (transactionId) => {
+    const updatedTransactions = fetchedData.filter(
+      (transaction) => transaction.id !== transactionId
+    );
+    setFetchedData(updatedTransactions);
   };
 
   return (
@@ -58,6 +60,7 @@ function App() {
         />
       </div>
       <div className="transaction-table-container">
+        <Form/>
         <TranscationTable
           transactions={fetchedData}
           searchDescription={searchDescription}

@@ -1,8 +1,7 @@
-import { useEffect ,useState } from "react";
-import './TranscationTable.css'
-import SearchBar from './SearchBar'
 
-function TransactionTable({ transactions }) {
+import './TranscationTable.css';
+
+function TransactionTable({ transactions, onDelete }) {
   return (
     <div className="transaction-table">
       <table>
@@ -13,6 +12,7 @@ function TransactionTable({ transactions }) {
             <th>Description</th>
             <th>Category</th>
             <th>Amount</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +23,7 @@ function TransactionTable({ transactions }) {
               <td>{transaction.description}</td>
               <td>{transaction.category}</td>
               <td>{transaction.amount}</td>
+              <td><button onClick = {() => onDelete(transaction.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>
